@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graduación · Ubica tu mesa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header>
+      <p class="etiqueta">Celebración de Graduación</p>
+      <h1>Encuentra tu mesa</h1>
+      <p class="sub">Después de la ceremonia, el convivio será afuera del templo. Selecciona tu número de mesa.</p>
+    </header>
+
+    <section class="tarjeta">
+      <label for="mesa">Número de mesa</label>
+      <select id="mesa">
+        <option value="">— Selecciona una mesa —</option>
+      </select>
+
+      <div id="resultado" class="resultado oculto" aria-live="polite">
+        <div class="numero">
+          <span>Mesa</span>
+          <strong id="numeroMesa">0</strong>
+        </div>
+        <div class="detalle">
+          <p class="zona" id="zona"></p>
+          <p id="ubicacion"></p>
+          <h2>Familias en esta mesa</h2>
+          <ul id="listaFamilias"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="tarjeta">
+      <label for="buscar">¿No sabes tu mesa? Busca tu nombre</label>
+      <input id="buscar" type="search" placeholder="Ej. Montufar" autocomplete="off">
+      <ul id="coincidencias" class="coincidencias"></ul>
+    </section>
+
+    <section class="tarjeta">
+      <h3>Plano del área del convivio</h3>
+      <div class="plano">
+        <div class="templo">⛪ Templo · ceremonia</div>
+        <div class="salida">↓ Salida del templo ↓</div>
+        <div id="mesas" class="mesas"></div>
+      </div>
+      <p class="nota">Toca una mesa del plano para ver quién se sienta ahí.</p>
+    </section>
+  </main>
+
+  <script src="datos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
